@@ -1,6 +1,9 @@
 
 (ns server.main
-  (:require ["walk-sync" :as walk-sync] [clojure.string :as string] ["fs" :as fs]))
+  (:require ["walk-sync" :as walk-sync]
+            [clojure.string :as string]
+            ["fs" :as fs]
+            ["path" :as path]))
 
 (defn main! []
   (let [base-dir js/process.env.base
@@ -9,7 +12,7 @@
                (walk-sync base-dir))
         *colors (atom [])]
     (doseq [filepath paths]
-      (let [content (fs/readFileSync (str base-dir filepath) "utf8")]
+      (let [content (fs/readFileSync (path/join base-dir filepath) "utf8")]
         (doseq [line (string/split-lines content)]
           (if (string/includes? line "#")
             (let [color (re-find (re-pattern "#[0-9a-f]{3,6}") line)]
