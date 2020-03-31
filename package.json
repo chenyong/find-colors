@@ -12,12 +12,13 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "devDependencies": {
-    "shadow-cljs": "^2.0.108",
-    "source-map-support": "^0.5.0",
-    "ws": "^3.3.2"
+    "shadow-cljs": "^2.8.94",
+    "source-map-support": "^0.5.16",
+    "ws": "^7.2.3"
   },
   "dependencies": {
-    "walk": "^2.3.9",
-    "walk-sync": "^0.3.2"
+    "color": "^3.1.2",
+    "walk": "^2.3.14",
+    "walk-sync": "^2.0.2"
   }
 }
